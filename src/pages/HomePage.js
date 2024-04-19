@@ -8,7 +8,6 @@ const HomePage = ({ toggleFavorites, favorites }) => {
   const [pages, setPages] = useState(0);
 
   const apiKey = process.env.REACT_APP_API_KEY;
-
   const handleChange = (event) => {
     setQuery(event.target.value);
   };
@@ -21,7 +20,8 @@ const HomePage = ({ toggleFavorites, favorites }) => {
       );
 
       const data = await response.json();
-      // console.log(data);
+      console.log(data);
+
       // // console.log(data._embedded);
       // console.log(data.page);
 

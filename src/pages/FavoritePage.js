@@ -1,6 +1,5 @@
 import React from "react";
 import FavoritesList from "../features/Favorites/FavoritesList";
-
 const FavoritesPage = ({ favorites, toggleFavorites }) => {
   return (
     <div>

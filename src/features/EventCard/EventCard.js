@@ -1,20 +1,21 @@
 import Heart from "../Heart/Heart";
 
 const EventCard = ({ event, formatDate, toggleFavorites, favorites }) => {
+  const imageSize = { width: "300px", height: "160px" }; // Define the size for the images
+
   return (
     <div className="row event-card">
-      <div className="col-md-1">
+      <div className="col-md-2 d-flex align-items-center justify-content-center">
         {event.images && event.images.length > 0 && (
           <img
-            src={event.images[0].url}
+            src={event.images[0]?.url}
             alt={event.name}
-            width={200}
-            height={300}
+            style={imageSize} // Apply the defined size to the image
             className="img-fluid"
           />
         )}
       </div>
-      <div className="col-md-11">
+      <div className="col-md-9">
         <h2>{event.name}</h2>
         {event._embedded &&
           event._embedded.venues &&
@@ -31,6 +32,11 @@ const EventCard = ({ event, formatDate, toggleFavorites, favorites }) => {
           toggleFavorites={toggleFavorites}
           favorites={favorites}
         />
+      </div>
+      <div className="col-md-1 d-flex align-items-center justify-content-center">
+        <button type="button" className="btn btn-outline-primary btn-block">
+          Find Ticket
+        </button>
       </div>
     </div>
   );

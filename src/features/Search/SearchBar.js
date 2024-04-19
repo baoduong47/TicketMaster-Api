@@ -1,5 +1,5 @@
 import React from "react";
-import SearchResultList from "./SearchResultList";
+import SearchResultList from "../Search/SearchResultList";
 
 const SearchBar = ({
   handleChange,
@@ -11,33 +11,38 @@ const SearchBar = ({
   favorites,
 }) => {
   return (
-    <div className="row">
-      <div className="col-lg 6">
-        <form onSubmit={handleSubmit}>
-          <input
-            type="text"
-            value={query}
-            onChange={handleChange}
-            placeholder="Search an event..."
-            className="form-control form-control-lg"
-          />
-          <button
-            className="btn btn-outline-primary btn-lg btn-block"
-            type="submit"
-          >
-            Search
-          </button>
-        </form>
+    <div className="container" style={{ marginTop: "3em" }}>
+      <div className="row justify-content-center">
+        <div className="col-lg-6" style={{ marginBottom: "3em" }}>
+          <form onSubmit={handleSubmit} className="d-flex">
+            <input
+              id="form1"
+              type="search"
+              value={query}
+              onChange={handleChange}
+              placeholder="Search an event..."
+              className="form-control me-2"
+            />
+            <button
+              type="submit"
+              className="btn btn-primary"
+              style={{ backgroundColor: "black", border: "black" }}
+            >
+              <i className="fa fa-search"></i>
+            </button>
+          </form>
+        </div>
       </div>
+
       <SearchResultList
         events={events}
         pages={pages}
         toggleFavorites={toggleFavorites}
         favorites={favorites}
+        query={query}
       />
-
-      {/* <FavoritesList favorites={favorites} /> */}
     </div>
   );
 };
+
 export default SearchBar;

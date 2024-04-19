@@ -12,11 +12,14 @@ import { useState } from "react";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
-    <Navbar dark color="primary" sticky="top" expand="md">
-      <NavbarBrand className="ms-5" href="/">
-        <h1 className="mt-1">EventHub</h1>
+    <Navbar color="dark" dark sticky="top" expand="md">
+      <NavbarBrand
+        className="ms-5 navheader"
+        href="/"
+        // style={{ fontFamily: "Abel, sans-serif" }}
+      >
+        <h1 className="mt-1">TicketHub</h1>
       </NavbarBrand>
-
       <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
       <Collapse isOpen={menuOpen} navbar>
         <Nav className="ms-auto" navbar>

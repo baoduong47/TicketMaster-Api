@@ -7,7 +7,7 @@ import { useState } from "react";
 
 function App() {
   const [favorites, setFavorites] = useState([]); // New state for favorites list
-  
+
   const toggleFavorites = (event) => {
     console.log(event);
     const { id, name, dates, classifications, images, _embedded } = event; // Destructure necessary information
