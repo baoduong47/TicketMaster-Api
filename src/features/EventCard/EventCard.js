@@ -15,7 +15,7 @@ const EventCard = ({ event, formatDate, toggleFavorites, favorites }) => {
           />
         )}
       </div>
-      <div className="col-md-9">
+      <div className="col-md-7">
         <h2>{event.name}</h2>
         {event._embedded &&
           event._embedded.venues &&
@@ -33,7 +33,7 @@ const EventCard = ({ event, formatDate, toggleFavorites, favorites }) => {
           favorites={favorites}
         />
       </div>
-      <div className="col-md-1 d-flex align-items-center justify-content-center">
+      <div className="col-md-3 d-flex align-items-center justify-content-center">
         <button type="button" className="btn btn-outline-primary btn-block">
           Find Ticket
         </button>

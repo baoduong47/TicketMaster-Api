@@ -19,8 +19,13 @@ const FavoritesList = ({ favorites, toggleFavorites }) => {
   // });
 
   return (
-    <div className="row">
-      <h2>Favorites List</h2>
+    <div className="container">
+      {favorites.length > 0 && (
+        <p style={{ marginTop: "60px" }}>
+          <b>Saved</b>
+        </p>
+      )}
+
       {favorites.map((favorite) => {
         console.log(favorites);
         return (

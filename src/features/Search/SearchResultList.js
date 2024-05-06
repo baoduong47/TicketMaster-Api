@@ -1,11 +1,9 @@
+import React, { useState, useEffect } from "react";
 import EventCard from "../EventCard/EventCard";
-const SearchResultList = ({
-  events,
-  pages,
-  toggleFavorites,
-  favorites,
-  query,
-}) => {
+
+const SearchResultList = ({ events, pages, toggleFavorites, favorites }) => {
+  const [selectedGenre, setSelectedGenre] = useState(""); // State to store selected genre
+
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     const month = date.toLocaleString("default", { month: "long" });
@@ -14,6 +12,8 @@ const SearchResultList = ({
     return `${month} ${day}, ${year}`;
   };
 
+  console.log("All Events:", events); // Log events to check
+
   // Sort events by start date
   events.sort((a, b) => {
     const dateA = new Date(a.dates.start.localDate);
@@ -21,11 +21,14 @@ const SearchResultList = ({
     return dateA - dateB;
   });
 
+  // Filter events based on selected genre
+  const filteredEvents = selectedGenre
+    ? events.filter((event) => event.genre === selectedGenre)
+    : events;
+
   return (
     <div className="container">
-      {pages.size > 0 && <div className=" row top-search">{query}</div>}
-
-      {pages.size > 0 && (
+      {filteredEvents.length > 0 && (
         <div
           className="d-flex justify-content-between align-items-center"
           style={{ marginBottom: 0 }}
@@ -34,12 +37,13 @@ const SearchResultList = ({
             <b>Results</b>
           </p>
           <p className="pagination-info">
-            Loaded <b>{pages.size}</b> out of <b>{pages.totalElements}</b> items
+            Loaded <b>{filteredEvents.length}</b> out of{" "}
+            <b>{pages.totalElements}</b> items
           </p>
         </div>
       )}
 
-      {events.map((event) => (
+      {filteredEvents.map((event) => (
         <EventCard
           key={event.id}
           event={event}

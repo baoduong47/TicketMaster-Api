@@ -13,12 +13,8 @@ const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   return (
     <Navbar color="dark" dark sticky="top" expand="md">
-      <NavbarBrand
-        className="ms-5 navheader"
-        href="/"
-        // style={{ fontFamily: "Abel, sans-serif" }}
-      >
-        <h1 className="mt-1">TicketHub</h1>
+      <NavbarBrand className="ms-5 navheader" href="/">
+        <h1 className="mt-1 header-title">TicketHub</h1>
       </NavbarBrand>
       <NavbarToggler onClick={() => setMenuOpen(!menuOpen)} />
       <Collapse isOpen={menuOpen} navbar>

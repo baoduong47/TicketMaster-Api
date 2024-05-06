@@ -24,7 +24,6 @@ const SearchBar = ({
               className="form-control me-2"
             />
             <button
-              type="submit"
               className="btn btn-primary"
               style={{ backgroundColor: "black", border: "black" }}
             >

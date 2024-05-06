@@ -11,28 +11,42 @@
   font-weight: bold;
 }
 
+.event-card:hover,
+.top-search:hover {
+  transform: scale(1.02);
+}
+
+.event-card,
+.top-search {
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.header-title {
+  font-size: 60px;
+}
+
 .heart-icon {
-  width: 24px; /* Adjust size as needed */
-  height: 24px; /* Adjust size as needed */
+  width: 24px;
+  height: 24px;
   background-color: transparent;
   border: none;
   cursor: pointer;
-  transition: color 0.3s ease; /* Smooth color transition */
+  transition: color 0.3s ease;
 }
 
 .heart-icon:hover {
-  color: red; /* Change color to red on hover */
+  color: red;
 }
 
 .heart-icon::before {
-  content: "\2665"; /* Unicode heart character */
-  font-size: 24px; /* Adjust size as needed */
+  content: "\2665";
+  font-size: 24px;
 }
 
 .pagination-info {
   font-size: 14px;
   color: #666;
-  margin-bottom: 10px; /* Adjust as needed */
+  margin-bottom: 10px;
   margin-top: 20px;
   margin-left: 20px;
 }
@@ -40,4 +54,16 @@
 .navheader {
   font-family: "Kaushan Script", cursive;
   font-style: normal;
+}
+
+.navbar-gradient {
+  background: linear-gradient(to right, #1b1a1a, #393736);
+}
+
+.btn-block {
+  width: 70%; /* Ensure the button expands to fill the parent container */
+}
+
+.footer {
+  margin-top: 70px;
 }
