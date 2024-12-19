@@ -33,11 +33,6 @@ const EventCard = ({ event, formatDate, toggleFavorites, favorites }) => {
           favorites={favorites}
         />
       </div>
-      <div className="col-md-3 d-flex align-items-center justify-content-center">
-        <button type="button" className="btn btn-outline-primary btn-block">
-          Find Ticket
-        </button>
-      </div>
     </div>
   );
 };
